@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <div className="app-wrapper">
-      <BrowserRouter>
+      <BrowserRouter basename="/Portfolio">
         <Navbar />
 
         <div className="content">

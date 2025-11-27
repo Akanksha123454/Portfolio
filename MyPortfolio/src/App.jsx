@@ -1,4 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -8,30 +7,22 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import "./App.css";
 
-
 function App() {
   return (
     <div className="app-wrapper">
-      <BrowserRouter basename="/Portfolio">
-        <Navbar />
+      <Navbar />
 
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
+      <main className="sections">
+        <section id="home"><Home /></section>
+        <section id="about"><About /></section>
+        <section id="skills"><Skills /></section>
+        <section id="projects"><Projects /></section>
+        <section id="contact"><Contact /></section>
+      </main>
 
-        <Footer />
-      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
 
-
-
 export default App;
-

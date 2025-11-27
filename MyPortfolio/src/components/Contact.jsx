@@ -70,7 +70,17 @@ const styles = {
   },
 };
 
-// Optional: Add hover and focus effects via CSS
-// Example: 
-// input:focus, textarea:focus { border-color: #764ba2; box-shadow: 0 0 5px rgba(118,75,162,0.5); }
-// button:hover { background-color: #444; transform: scale(1.03); }
+/* Add these hover/focus effects in a CSS file or <style> tag */
+const css = `
+input:focus, textarea:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 5px rgba(118, 75, 162, 0.5);
+}
+
+button:hover {
+  background-color: #444;
+  transform: scale(1.03);
+}
+`;
+
+// You can inject this CSS in your main App or index.html

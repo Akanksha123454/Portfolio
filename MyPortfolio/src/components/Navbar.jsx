@@ -1,33 +1,41 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import profilePic from "../assets/profile.jpeg";
-import "./navbar.css";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <nav className="navbar">
-      {/* LEFT - Profile + Name */}
-      <div className="left-section">
-        <img src={profilePic} alt="Profile" className="profile-pic" />
-        <h2 className="logo">Akanksha </h2>
-        <h4>Fullstack Devloper</h4>
+    <nav style={styles.nav}>
+      {/* Profile */}
+      <div style={styles.left}>
+        <img src={profilePic} alt="Profile" style={styles.profile} />
+        <span style={styles.name}>Akanksha</span>
       </div>
 
-      {/* Mobile Menu Icon */}
-      <button className="menu-btn" onClick={() => setOpen(!open)}>
-        ☰
-      </button>
-
-      {/* RIGHT - Navigation Links */}
-      <ul className={`nav-links ${open ? "show" : ""}`}>
-        <li><Link to="/" onClick={() => setOpen(false)}>Home</Link></li>
-        <li><Link to="/about" onClick={() => setOpen(false)}>About</Link></li>
-        <li><Link to="/skills" onClick={() => setOpen(false)}>Skills</Link></li>
-        <li><Link to="/projects" onClick={() => setOpen(false)}>Projects</Link></li>
-        <li><Link to="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
-      </ul>
+      {/* Nav links */}
+      <div style={styles.right}>
+        <a href="#home" style={styles.link}>Home</a>
+        <a href="#about" style={styles.link}>About</a>
+        <a href="#skills" style={styles.link}>Skills</a>
+        <a href="#projects" style={styles.link}>Projects</a>
+        <a href="#contact" style={styles.link}>Contact</a>
+      </div>
     </nav>
   );
 }
+
+const styles = {
+  nav: {
+    position: "fixed",
+    top: 0,
+    width: "100%",
+    background: "linear-gradient(135deg, #1b1f8a, #2129b7, #3f52ff)",
+    padding: "12px 25px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    zIndex: 1000,
+  },
+  left: { display: "flex", alignItems: "center", gap: "10px" },
+  profile: { width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover", border: "2px solid white" },
+  name: { color: "white", fontSize: "18px", fontWeight: "600" },
+  right: { display: "flex", gap: "25px" },
+  link: { color: "white", textDecoration: "none", fontSize: "18px", fontWeight: "500" },
+};

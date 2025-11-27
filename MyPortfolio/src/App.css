@@ -1,0 +1,31 @@
+@media (max-width: 600px) {
+  nav ul {
+    display: none;
+  }
+  nav button {
+    display: block !important;
+  }
+}
+/* Make the whole page stretch */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+/* Let App take full height */
+
+
+/* Push footer to bottom */
+/* footer {
+  margin-top: a;
+} */
+/* App.css */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full viewport height */
+}
+
+.content {
+  flex: 1; /* takes all remaining space so footer goes to bottom */
+}
